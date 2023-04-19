@@ -2,12 +2,12 @@
              @[1 1 1]
              @[0 0 0]])
 
-(var board @[@[0 0 1 0 0 0]
-             @[1 0 1 0 0 0]
-             @[0 1 1 0 0 0]
-             @[0 0 0 0 0 0]
-             @[0 0 0 0 0 0]
-             @[0 0 0 0 0 0]])
+(var board @[@[0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+             @[1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+             @[0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+             @[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+             @[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+             @[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]])
 
 (defn alive-next?
   [current neighbors]
@@ -46,8 +46,8 @@
   [board]
   (var copy (slice board))
   (array/clear board)
-  (for i 0 (length (first copy))
-    (array/push board (array/new-filled (length copy) 0)))
+  (for i 0 (length copy)
+    (array/push board (array/new-filled (length (first copy)) 0)))
   (for r 0 (length board)
     (for c 0 (length (first board))
       (put-in
