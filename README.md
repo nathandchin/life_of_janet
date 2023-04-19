@@ -11,11 +11,10 @@ To run the program, install the
 [latest release](https://github.com/janet-lang/janet/releases) on Github, then
 run
 ```
-$ janet life.janet
+$ janet life.janet <mode> <speed> <scale>
 ```
-A basic
-[glider](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Examples_of_patterns)
-should appear in the terminal.
+where `mode` is either `term` or `window`, and `speed` and `scale` are any
+number greater than 1. A new window should appear with the game running inside.
 
 # Purpose
 This is just a fun project to help me learn Janet. Code could use a lot of work.

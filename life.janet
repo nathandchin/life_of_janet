@@ -1,15 +1,4 @@
-(var board @[@[0 0 0]
-             @[1 1 1]
-             @[0 0 0]])
-
-(var board @[@[0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
-             @[1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
-             @[0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
-             @[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
-             @[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
-             @[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]])
-
-(defn alive-next?
+(defn- alive-next?
   [current neighbors]
   (cond
     (and current (= 2 neighbors)) true
@@ -17,19 +6,19 @@
     (and (not current) (= 3 neighbors)) true
     false))
 
-(defn nil-to-int
+(defn- nil-to-int
   [x]
   (if x
     x
     0))
 
-(defn bool-to-int
+(defn- bool-to-int
   [x]
   (if x
     1
     0))
 
-(defn get-neighbors
+(defn- get-neighbors
   [board r c]
   (var res 0)
   (+= res (nil-to-int (get-in board [(dec r) (dec c)] )))
@@ -58,7 +47,7 @@
             (= 1 (get-in copy [r c]))
             (get-neighbors copy r c)))))))
 
-(defn print-board
+(defn- print-board
   [board]
   (for r 0 (length board)
     (for c 0 (length (first board))
@@ -66,7 +55,10 @@
     (print))
   (print))
 
-(forever
-  (print-board board)
-  (advance board)
-  (os/sleep 1))
+(defn play-terminal
+  [board speed]
+  (let [delay-time (/ 1 speed)]
+    (forever
+      (print-board board)
+      (advance board)
+      (os/sleep delay-time))))
