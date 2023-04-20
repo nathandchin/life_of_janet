@@ -6,7 +6,14 @@ is a cellular automaton.
 ## Janet
 [Janet](https://janet-lang.org/index.html) is a very neat Lisp-like language.
 
-# Running
+# Execution
+## Requirements
+Because it is not compiled with [JPM](https://github.com/janet-lang/jpm) (yet!), Janet is required to run.
+
+[Jaylib](https://github.com/janet-lang/jaylib) is also required. It can be
+installed using [JPM](https://github.com/janet-lang/jpm).
+
+## Running
 To run the program, install the
 [latest release](https://github.com/janet-lang/janet/releases) on Github, then
 run
