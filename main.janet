@@ -13,4 +13,4 @@
     (case mode
       "term" (life/play-terminal board speed)
       "window" (drawing/play-draw board speed scale)
-      (print ``Usage: `janet life.janet <term | window> <speed> [scale]``))))
+      (print ``Usage: `janet main.janet <file> <term | window> <speed> [scale]``))))
