@@ -8,7 +8,8 @@ is a cellular automaton.
 
 # Execution
 ## Requirements
-Because it is not compiled with [JPM](https://github.com/janet-lang/jpm) (yet!), Janet is required to run.
+Because it is not compiled with [JPM](https://github.com/janet-lang/jpm) (yet!),
+Janet is required to run.
 
 [Jaylib](https://github.com/janet-lang/jaylib) is also required. It can be
 installed using [JPM](https://github.com/janet-lang/jpm).
